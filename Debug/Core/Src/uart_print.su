@@ -1,0 +1,5 @@
+../Core/Src/uart_print.c:9:6:USART_Init	16	static
+../Core/Src/uart_print.c:14:6:UART_sendByte	16	static
+../Core/Src/uart_print.c:19:6:USART_sendChar	16	static
+../Core/Src/uart_print.c:24:6:USART_put	16	static
+../Core/Src/uart_print.c:33:5:USART_Transmit	28	static
