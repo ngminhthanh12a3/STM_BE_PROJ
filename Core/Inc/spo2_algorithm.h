@@ -64,6 +64,7 @@
 
 //#include <Arduino.h>
 #include <stdio.h>
+#include <stdint.h>
 
 #define min(a,b) ((a)<(b)?(a):(b))
 

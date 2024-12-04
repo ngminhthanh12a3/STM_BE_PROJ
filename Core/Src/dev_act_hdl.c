@@ -131,16 +131,16 @@ void HandleDeviceSendFrame(uint8_t devID, uint8_t buffer_len, uint8_t *buffer)
 	switch (devID) {
 		case DEV_0_ID:
 			//
-			pLen = FP_F_LEN(DEV_0_DT_LEN);
-			pData[pIndex++] = DEV_0_DT_LEN; // | DATA LEN |
+			pLen = FP_F_LEN(buffer_len);
+			pData[pIndex++] = buffer_len; // | DATA LEN |
 
 			//
-			uint8_t DATA[DEV_0_DT_LEN];
-			for(uint8_t i = 0;i < DEV_0_DT_LEN;i++)
+			uint8_t DATA[buffer_len];
+			for(uint8_t i = 0;i < buffer_len;i++)
 				DATA[i] = buffer[i];
 
 			//
-			for(uint8_t i = 0;i < DEV_0_DT_LEN;i++)
+			for(uint8_t i = 0;i < buffer_len;i++)
 			{
 				//				(DATA & (0xFF << i)) >> i; // | DATA |
 				pData[pIndex++] = DATA[i];
@@ -151,11 +151,11 @@ void HandleDeviceSendFrame(uint8_t devID, uint8_t buffer_len, uint8_t *buffer)
 
 			// | CRC |
 			uint16_t *pCRC = (uint16_t*)(pData + pIndex);
-			*pCRC = Compute_CRC16(DATA, DEV_0_DT_LEN);
+			*pCRC = Compute_CRC16(DATA, buffer_len);
 
 			break;
-		default:
-			break;
+//		default:
+//			break;
 	}
 
 	//

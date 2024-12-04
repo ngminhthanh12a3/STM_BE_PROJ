@@ -1,0 +1,2 @@
+../Core/Src/CRC16.c:5:6:CalculateTable_CRC16	4
+../Core/Src/CRC16.c:26:16:Compute_CRC16	2
