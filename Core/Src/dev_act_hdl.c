@@ -122,6 +122,7 @@ void HandlerDeviceAction(uint8_t CMD, uint8_t buffer_len, uint8_t *buffer)
 
 void HandleDeviceSendFrame(uint8_t devID, uint8_t buffer_len, uint8_t *buffer)
 {
+	HAL_Delay(10);
 	uint8_t pData[FP_F_MAX_LEN], pLen = 0;
 	uint8_t pIndex = 0;
 	// | H1 | H2 |
